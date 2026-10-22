@@ -1,6 +1,6 @@
 # Neural Data & Model Compression Engine (`neural-data-compressor`)
 
-[![Continuous Integration](https://github.com/ddkeller01/neural-data-compressor/actions/workflows/ci.yml/badge.svg)](https://github.com/darnellwashingtonjr94-art/neural-data-compressor/actions)
+[![Continuous Integration](https://github.com/ddkeller01/neural-data-compressor/actions/workflows/ci.yml/badge.svg)](https://github.com/ddkeller01/neural-data-compressor/actions)
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
