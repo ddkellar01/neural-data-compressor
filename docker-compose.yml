@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  trainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: neural_compress_trainer
+    volumes:
+      - .:/workspace
+      - ./data:/workspace/data
+    command: python3 scripts/train.py
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  benchmark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: neural_compress_benchmark
+    volumes:
+      - .:/workspace
+    command: python3 -m unittest discover -s tests
+    depends_on:
+      - trainer
