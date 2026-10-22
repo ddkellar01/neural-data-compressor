@@ -18,16 +18,14 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Dependencies
+      - name: Install Dependencies & Package
         run: |
-          python -m pip install --upgrade pip
-          pip install pytest flake8
+          python -m pip install --upgrade pip setuptools wheel
           pip install -r requirements.txt
-          pip install -e .
+          pip install --no-build-isolation -e .
 
       - name: Code Linting
         run: |
-          # stop the build if there are Python syntax errors or undefined names
           flake8 src/ scripts/ tests/ --count --select=E9,F63,F7,F82 --show-source --statistics
 
       - name: Run Unit Tests
