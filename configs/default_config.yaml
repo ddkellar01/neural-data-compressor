@@ -1,0 +1,19 @@
+system:
+  seed: 42
+  device: "cuda"
+  num_workers: 4
+
+codec:
+  in_channels: 3
+  latent_channels: 128
+  num_bits: 4
+
+training:
+  batch_size: 16
+  epochs: 50
+  learning_rate: 1.0e-4
+  lambda_rd: 0.01
+
+entropy:
+  state_bits: 32
+  precision_bits: 12
